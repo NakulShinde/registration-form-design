@@ -7,7 +7,6 @@ import {SubmitButton} from './../Fields/Buttons/Buttons'
 import styles from './RegistrationForm.module.scss'
 import PasswordCriteria from './../PasswordCriteria/PasswordCriteria';
 
-// const EMAIL_CHECK_REGEX = /^[a-zA-Z0-9_\.\-]+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}/ig;
 const EMAIL_CHECK_REGEX = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/ig;
 
 class RegistrationForm extends Component {
