@@ -29,7 +29,7 @@ export const InputPassword = (props) => {
 }
 
 export const EmailField = (props) => {
-    return <div className='form__field'>
+    return <div className={styles.form__field}>
         <Label label="Email"></Label>
         <InputText
             name={props.name}
@@ -41,7 +41,7 @@ export const EmailField = (props) => {
 }
 
 export const PasswordField = (props) => {
-    return <div className='form__field'>
+    return <div className={styles.form__field}>
         <Label label="Password"></Label>
         <InputPassword
             name={props.name}
