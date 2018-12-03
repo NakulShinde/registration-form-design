@@ -6,7 +6,9 @@ const Label = (props) => <label className={styles.label__field}>{props.label}</l
 
 export const InputText = (props) => {
     return <input
-        className={styles.input__field}
+        className={`${styles.input__field} ${ (!props.isValid)
+        ? styles.invalid
+        : ''}`}
         type="text"
         name={props.name}
         onChange={props.onChange}
@@ -16,7 +18,9 @@ export const InputText = (props) => {
 
 export const InputPassword = (props) => {
     return <input
-        className={styles.input__field}
+        className={`${styles.input__field} ${ (!props.isValid)
+        ? styles.invalid
+        : ''}`}
         type="password"
         name={props.name}
         onChange={props.onChange}
@@ -29,6 +33,7 @@ export const EmailField = (props) => {
         <Label label="Email"></Label>
         <InputText
             name={props.name}
+            isValid={props.isValid}
             onChange={props.onChange}
             value={props.value}
             placeholder="Your email.."></InputText>
@@ -40,6 +45,7 @@ export const PasswordField = (props) => {
         <Label label="Password"></Label>
         <InputPassword
             name={props.name}
+            isValid={props.isValid}
             onChange={props.onChange}
             value={props.value}
             placeholder="Your password.."></InputPassword>

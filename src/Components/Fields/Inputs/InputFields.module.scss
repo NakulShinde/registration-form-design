@@ -3,6 +3,10 @@
     padding: 12px;
     border: 1px solid #282c34;
     resize: vertical;
+    &.invalid {
+      border: 1px solid red;
+      box-shadow: inset 0px 0px 2px 2px rgba(255, 0, 0, 0.075);
+    }
 }
 
 .label__field {
