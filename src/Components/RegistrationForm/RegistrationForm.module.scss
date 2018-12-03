@@ -1,5 +1,26 @@
 .registration__form {
     border: 1px solid #282c34;
-    min-width: 320px;
     padding: 10px;
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+    .registration__form {
+        width: 80%;
+    }
+}
+@media (min-width: 481px) and (max-width: 767px) {
+    .registration__form {
+        width: 90%;
+    }
+}
+@media (min-width: 320px) and (max-width: 480px) {
+    .registration__form {
+        width: 100%;
+        margin: 5px;
+    }
+}
+@media (max-width: 319px) {
+    .main__container {
+        width: 100%;
+        margin: 0;
+    }
 }
