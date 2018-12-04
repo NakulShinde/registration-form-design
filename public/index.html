@@ -19,13 +19,173 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
+	<style>
+		html, body{
+			margin: 0;
+			padding: 0;
+		}
+		* {
+			box-sizing: border-box;
+		}
+		@-webkit-keyframes placeHolderKeyFrame {
+			0% {
+				background-position: -468px 0;
+			}
+			100% {
+				background-position: 468px 0;
+			}
+		}
+		@keyframes placeHolderKeyFrame {
+			0% {
+				background-position: -468px 0;
+			}
+			100% {
+				background-position: 468px 0;
+			}
+		}
+
+		.animated-background {
+			-webkit-animation-duration: 1s;
+			animation-duration: 1s;
+			-webkit-animation-fill-mode: forwards;
+			animation-fill-mode: forwards;
+			-webkit-animation-iteration-count: infinite;
+			animation-iteration-count: infinite;
+			-webkit-animation-name: placeHolderKeyFrame;
+			animation-name: placeHolderKeyFrame;
+			-webkit-animation-timing-function: linear;
+			animation-timing-function: linear;
+			background: #f6f7f8;
+			background: #eeeeee;
+			background: -webkit-gradient(linear, left top, right top, color-stop(8%, #eeeeee), color-stop(18%, #dddddd), color-stop(33%, #eeeeee));
+			background: -webkit-linear-gradient(left, #eeeeee 8%, #dddddd 18%, #eeeeee 33%);
+			background: linear-gradient(to right, #eeeeee 8%, #dddddd 18%, #eeeeee 33%);
+			-webkit-background-size: 800px 104px;
+			background-size: 800px 104px;
+			position: relative;
+		}
+
+		.app__header {
+			min-height: 10vh;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			border-bottom: 1px solid #cccccc;
+		}
+		.header__content {
+			width: 250px;
+			padding: 15px;
+			border: 1px solid #cccccc;
+		}
+		.main__container {
+			margin: 10px auto;
+			height: 88vh;
+			display: flex;
+		}
+		.registration__container {
+			padding: 10px;
+			display: flex;
+			align-items: center;
+			flex: 1;
+			justify-content: center;
+		}
+		.registration__form {
+			border: 1px solid #cccccc;
+			padding: 10px;
+		}
+		.form__field{
+			padding: 5px 0;
+		}
+		.input__field {
+			width: 100%;
+			padding: 22px;
+			border: 1px solid #cccccc;
+			resize: vertical;
+		}
+		.input__button {
+			padding: 15px 0;
+			border: 1px solid #cccccc;
+		}
+		.label__field {
+			padding: 10px 0;
+			display: inline-block;
+			width: 100px;
+			border: 1px solid #cccccc;
+		}
+		.strength__field {
+			padding: 10px 0;
+			border: 1px solid #cccccc;
+		}
+		.strength__text {
+			margin: 4px 0;
+			padding: 7px 0;
+			width: 150px;
+			border: 1px solid #cccccc;
+		}
+		@media (min-width: 1025px) {
+			.registration__form {
+				width: 400px;
+			}
+		}
+		@media (min-width: 768px) and (max-width: 1024px) {
+			.registration__form {
+				width: 80%;
+			}
+		}
+		@media (min-width: 481px) and (max-width: 767px) {
+			.registration__form {
+				width: 90%;
+			}
+		}
+		@media (min-width: 320px) and (max-width: 480px) {
+			.registration__form {
+				width: 100%;
+				margin: 5px;
+			}
+		}
+		@media (max-width: 319px) {
+			.registration__form {
+				width: 100%;
+				margin: 0;
+			}
+		}
+
+    </style>
     <title>Registration Forms</title>
   </head>
   <body>
     <noscript>
       You need to enable JavaScript to run this app.
     </noscript>
-    <div id="root"></div>
+	<div id="root">
+	
+		<header class="app__header">
+			<div class="header__content animated-background"></div>
+		</header>
+		<main class="main__container">
+			<div class="registration__container">
+				<div class="registration__form">
+					<div class="form__field">
+						<label class="label__field animated-background"></label>
+						<div class="input__field animated-background"></div>
+					</div>
+					<div class="form__field">
+						<div class="label__field animated-background"></div>
+						<div class="input__field animated-background"></div>
+					</div>
+					<div class="form__field">
+						<div class="strength__field animated-background"></div>
+						<div class="strength__text animated-background"></div>
+					</div>
+					<div class="form__field">
+						<div class="input__button animated-background"></div>
+					</div>
+				</div>
+			</div>
+		</main>
+	
+	</div>
     <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.
