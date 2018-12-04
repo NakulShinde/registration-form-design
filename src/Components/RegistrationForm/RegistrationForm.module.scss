@@ -2,6 +2,11 @@
     border: 1px solid #282c34;
     padding: 10px;
 }
+@media (min-width: 1025px) {
+    .registration__form {
+        width: 400px;
+    }
+}
 @media (min-width: 768px) and (max-width: 1024px) {
     .registration__form {
         width: 80%;
@@ -19,7 +24,7 @@
     }
 }
 @media (max-width: 319px) {
-    .main__container {
+    .registration__form {
         width: 100%;
         margin: 0;
     }
