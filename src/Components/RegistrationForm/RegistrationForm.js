@@ -8,7 +8,8 @@ import styles from './RegistrationForm.module.scss'
 import PasswordCriteria from './../PasswordCriteria/PasswordCriteria';
 
 const EMAIL_CHECK_REGEX = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/ig;
-
+const PSSWORD_MAX_STRENGTH = 3;
+const VALID_PASSWORD_STRENGTH = 3;
 class RegistrationForm extends Component {
     constructor(props) {
         super(props)
@@ -46,10 +47,10 @@ class RegistrationForm extends Component {
             const strengthObject = zxcvbn(e.target.value, this.state.email);
             // score returned from zxcvbn function is range of 0 to 4. Range to consider is
             // 0 to 3 only
-            stateObj.passwordStrength = (strengthObject.score > 3)
+            stateObj.passwordStrength = (strengthObject.score > PSSWORD_MAX_STRENGTH)
                 ? 3
                 : strengthObject.score;
-            stateObj.passwordValid = (strengthObject.score > 2)
+            stateObj.passwordValid = (strengthObject.score >= VALID_PASSWORD_STRENGTH)
                 ? true
                 : (e.target.value === '')
                     ? true
@@ -64,7 +65,9 @@ class RegistrationForm extends Component {
     }
     onSubmit(e) {
         e.preventDefault();
-        console.log('Registration Submit Success')
+        if (this.state.email !== '' && this.state.passwordStrength >= VALID_PASSWORD_STRENGTH) {
+            console.log('Registration Submit Success')
+        }
     }
     render() {
         const {email, emailValid, password, passwordStrength, passwordValid} = this.state;
