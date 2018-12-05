@@ -36,7 +36,7 @@ it("validate InputPassword content", () => {
 
     const input = wrapper.find('input');
     expect(input.length).toBe(1);
-    const inputPassword = wrapper.find('input[type="passwordw"]');
+    const inputPassword = wrapper.find('input[type="password"]');
     expect(inputPassword.length).toBe(1);
 
     inputPassword.simulate('change', fakeEvent)
