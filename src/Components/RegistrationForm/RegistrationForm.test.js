@@ -6,6 +6,11 @@ import {EmailField, PasswordField} from './../Fields/Inputs/InputFields'
 import {SubmitButton} from './../Fields/Buttons/Buttons'
 import PasswordCriteria from './../PasswordCriteria/PasswordCriteria';
 
+
+const fakeEvent = {
+    preventDefault: () => console.log('preventDefault'),
+};
+
 let wrapper;
 let mountedWrapper;
 beforeEach(() => {
@@ -136,3 +141,12 @@ it('Validate RegistrationForm password element & state', () => {
     expect(mountedWrapper.state('passwordValid')).toEqual(true)
     expect(mountedWrapper.state('passwordStrength')).toEqual(3)
 })
+
+it('Validate onSubmit check', () => {
+    const instance = wrapper.instance();
+    let result = instance.onSubmit(fakeEvent);
+    expect(result).toEqual(false);
+    wrapper.setState({email: 'nakul@gmail.com', passwordStrength:3})
+    result = instance.onSubmit(fakeEvent);
+    expect(result).toEqual(true);
+});

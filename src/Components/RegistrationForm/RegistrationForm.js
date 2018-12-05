@@ -67,7 +67,9 @@ class RegistrationForm extends Component {
         e.preventDefault();
         if (this.state.email !== '' && this.state.passwordStrength >= VALID_PASSWORD_STRENGTH) {
             console.log('Registration Submit Success')
+            return true;
         }
+        return false;
     }
     render() {
         const {email, emailValid, password, passwordStrength, passwordValid} = this.state;
