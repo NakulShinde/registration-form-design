@@ -4,12 +4,14 @@ It is registration page front-end reponsive layout with password strength featur
 
 Tech stack used & feature implementated,
 - React Component Architecture
-- CSS in JS (to write modler CSS)
+- CSS in JS (to write modular CSS)
 - Password strength library used zxcvbn (https://github.com/dropbox/zxcvbn)
 - Responsive layout
-- Placeholder for divices with slower network 
+- Placeholder for devices with slower network 
+- Unit testing with Jest & Enzyme
+- Test Code coverage
 
-# Running app
+# Installation & running steps
 - #npm install
 - #npm start
 - visit localhost:3000 in browser
@@ -18,8 +20,9 @@ Tech stack used & feature implementated,
 - #npm test
 
 # Check Unit Test Code Coverage
-- #npm run coverage
-- ScreenShot
+- #npm run -- --coverage
+- Coverage ScreenShot
+
 ![registrationform-5](https://user-images.githubusercontent.com/3436316/49494012-3c8c4f80-f884-11e8-8292-8c5739bfc8bb.PNG)
 
 # Application Running Screenshots
